@@ -1,0 +1,22 @@
+{
+  "name": "interviewplatform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build":"npm install --prefix BackEnd && npm install --prefix Frontend && npm run build --prefix Frontend ",
+    "start":"npm run start --prefix BackEnd",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sreejit-sadhukhan00/InterviewPlatForm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sreejit-sadhukhan00/InterviewPlatForm/issues"
+  },
+  "homepage": "https://github.com/sreejit-sadhukhan00/InterviewPlatForm#readme",
+  "description": ""
+}
