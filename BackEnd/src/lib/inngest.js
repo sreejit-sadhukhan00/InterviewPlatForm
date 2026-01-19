@@ -3,7 +3,7 @@ import { connectDB } from "./db.js"
 import User from "../models/User.js"
 
 
-export const inngest=Inngest({
+export const inngest=new Inngest({
     id:"interview-platform-1",
 });
 
