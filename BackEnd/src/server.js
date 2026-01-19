@@ -2,6 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import { ENV } from "./lib/env.js";
 import path from "path";
+import { connect } from "http2";
+import { connectDB } from "./lib/db.js";
 dotenv.config();
 
 
@@ -21,6 +23,18 @@ app.get("/health",(req,res)=>{
         res.sendFile(path.join(__dirname,"../Frontend","dist","index.html"));
      })
  }
-app.listen(ENV.PORT,()=>{
+
+const startServer=async()=>{
+     try{
+        await connectDB();
+        app.listen(ENV.PORT,()=>{
     console.log("Server is running on port:",ENV.PORT);
 });
+
+     }
+     catch(error){
+        console.error("Error starting the server:",error);
+     }
+}
+
+startServer();
