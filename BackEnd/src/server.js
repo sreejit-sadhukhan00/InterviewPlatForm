@@ -9,6 +9,7 @@ import { clerkMiddleware } from '@clerk/express'
 import { inngest,functions  } from "./lib/inngest.js";
 import { protectRoute } from "./middleware/protectRoute.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import SessionRoutes from "./routes/SessionRoutes.js";
 dotenv.config();
 
 
@@ -35,6 +36,7 @@ app.get("/health",(req,res)=>{
 
 // routes 
  app.use("/api/chat",chatRoutes)
+ app.use("/api/sessions",SessionRoutes)
 
 
 // make our app development ready 
