@@ -1,25 +1,216 @@
-import { SignedIn, SignedOut, SignInButton } from '@clerk/clerk-react'
-import React from 'react'
-import toast from 'react-hot-toast'
+import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+import React from "react";
+import toast from "react-hot-toast";
+import { Link } from "react-router";
+import { ArrowRight, ArrowRightIcon, CheckIcon, Code2Icon, SparklesIcon, UsersIcon, VideoIcon, ZapIcon } from "lucide-react";
 
 const HomePage = () => {
-  return ( 
+  return (
     <>
-    <div>HomePage</div> 
-     <button onClick={()=>toast.success("hey its working")}>click me</button>
-      <SignedOut>
-           <SignInButton mode='modal'>
-              <button>
-                   Log In
-                 </button>
-           </SignInButton>
-      </SignedOut>
+      <div
+        className="bg-linear-to-br 
+      from-base-100 via-base-200 to-base-300 "
+      >
+        {/* NAV */}
+        <nav className="bg-base-100/50 backdrop-blur-md border-b border-primary/20 sticky top-0 z-50 shadow-lg">
+          <div className="max-w-7xl mx-auto p-4 flex items-center justify-between">
+            {/* LOGO */}
+            <Link
+              to={"/"}
+              className="flex items-center gap-3 hover:scale-105 transition-transform duration-200"
+            >
+              <div className="size-10 rounded-xl bg-linear-to-br from-primary via-secondary to-accent flex items-center justify-center shadow-lg">
+                <SparklesIcon className="size-6 text-white" />
+              </div>
 
-         <SignedIn>
-             <SignInButton mode='modal'/>
-         </SignedIn>
+              <div className="flex flex-col">
+                <span
+                  className="font-black 
+                     bg-linear-to-r from-primary via-secondary to-accent text-2xl  bg-clip-text text-transparent font-mono tracking-wider"
+                >
+                  Interview Platform
+                </span>
+                <span className="text-xs text-base-content/60 font-medium -mt-1">
+                  Code Together
+                </span>
+              </div>
+            </Link>
+
+            {/* AUTH BUTTONS */}
+            <SignInButton mode="modal">
+              <button
+                className="group px-6 py-3 bg-linear-to-r from-primary to-secondary  text-white font-semibold rounded-4xl 
+                  cursor-pointer
+                   shadow-lg hover:shadow-xl hover:scale-105  transition-transform duration-200 flex items-center gap-2"
+              >
+                <span>Get Started</span>
+                <ArrowRightIcon className="size-4 font-extrabold group-hover:translate-x-0.5 transition-transform" />
+              </button>
+            </SignInButton>
+          </div>
+        </nav>
+
+        {/* Hero Section */}
+          <div className="max-w-7xl mx-auto px-4 py-20"> 
+              <div className="grid lg:grid-cols-2 gap-12 items-center"> 
+                   {/* left */}
+                   <div className="space-y-8">
+                        <div className="badge badge-primary"> 
+                          <ZapIcon className="size-4"/>
+                           Real Time Collaboration
+                        </div>
+                        <h1 className="text-5xl lg:text-7xl font-black leading-tight"> 
+                          <span className="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                            Code Together,
+                          </span>
+                          <br/>
+                           <span className="text-base-content">
+                            Learn Together!
+                           </span>
+                        </h1>
+
+                        <p className="text-xl text-base-content/70 leading-relaxed max-w-xl ">
+                         The ultimate platform for collaborative coding interviews and pir programming practice.Connect face to fae,code in real time , and ace your technical interviews
+                        </p>
+                        {/* feature pills */}
+                        <div className="f
+                        lex flex-wrap gap-3">
+                           <div className="badge badge-lg badge-outline">
+                            <CheckIcon className="size-4 text-success"/>
+                            Live Video Chat
+                           </div>
+                           <div className="badge badge-lg badge-outline">
+                            <CheckIcon className="size-4 text-success"/>
+                            Code Editor
+                           </div>
+                           <div className="badge badge-lg badge-outline">
+                            <CheckIcon className="size-4 text-success"/>
+                            Multi Language Support
+                           </div>
+                              {/* cta buttons */}
+                              <div className="flex flex-wrap gap-4 mt-4">
+                                <SignInButton mode="modal">
+                                  <button className="btn btn-primary btn-lg">
+                                   Start Coding
+                                    <ArrowRightIcon className="size-5"/>
+                                </button>
+                                </SignInButton>
+                                   
+
+                                   <button className="btn btn-outline btn-lg">
+                                           <VideoIcon className="size-5 mr-2"/>
+                                           Watch Demo
+                                   </button>
+                              </div>
+
+                              {/* stats */}
+                              <div className="stats  lg:stats-horizontal bg-base-100 shadow-lg mt-4 ">
+                                 <div className="stat">
+                                     <div className="stat-value text-primary">10k</div>
+                                        <div className="stat-title">
+                                           Active users
+                                        </div>
+                                     
+                                 </div>
+
+                                 <div className="stat">
+                                     <div className="stat-value text-secondary">50k+</div>
+                                        <div className="stat-title">
+                                           Sessions
+                                        </div>
+                                     
+                                 </div>
+
+                                 <div className="stat">
+                                     <div className="stat-value text-accent">99.9%</div>
+                                        <div className="stat-title">
+                                           uptime
+                                        </div>
+                                     
+                                 </div>
+                              </div>
+                        </div>
+                   </div>
+
+                   {/* Right Image */}
+                   <img
+                    src="/image.png"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Collaborative Coding"
+                    className="w-full h-auto rounded-3xl shadow-2xl border-4 border-base-100 hover:scale-105 transition-transform duration-500"
+                   />
+              </div>
+          </div>
+
+          {/* Feature Section  */}
+          <div className="max-w-7xl mx-auto px-4
+          py-20">
+             <div className="text-center mb-16">
+               <h2 className="text-4xl font-bold mb-4">  
+                  Everything You Need to <span
+                  className="text-primary font-mono"
+                  >
+                    Succeed
+                  </span>
+               </h2>
+                  <p className="text-base-content/70 text-lg max-w-2xl mx-auto ">
+                     Powerful features designed to enhance your coding interview experience and help you perform at your best.
+                  </p>
+             </div>
+              {/* features grid */}
+              {/* feature 1 */}
+              <div className="grid grid-cols-3 gap-8">
+                 <div className="card bg-base-100 shadow-xl">
+                      <div className="card-body items-center text-center">
+                         <div className="size-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
+                            <VideoIcon className="size-8 text-primary"/>               
+                            </div> 
+                            <h1 className="font-mono text-xl tracking-tighter -mt-5">
+                                     HD Video Call
+                                    </h1> 
+                            <p className="text-base-content/70">
+                                Crystal clear video calls to communicate effectively during interviews.
+                               </p>        
+                      </div>
+                 </div>
+              {/* feature 2 */}
+                  <div className="card bg-base-100 shadow-xl">
+                      <div className="card-body items-center text-center">
+                         <div className="size-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
+                            <Code2Icon className="size-8 text-primary"/>               
+                            </div> 
+                            <h1 className="font-mono text-xl tracking-tighter -mt-5">
+                                     Live code Editor
+                                    </h1> 
+                            <p className="text-base-content/70">
+                                Collaborate in real time with syntax highlighting and auto-completion and multiple language support.
+                               </p>        
+                      </div>
+                 </div>
+                  
+                  {/* feature 3 */}
+                  <div className="card bg-base-100 shadow-xl">
+                      <div className="card-body items-center text-center">
+                         <div className="size-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
+                            <UsersIcon className="size-8 text-primary"/>               
+                            </div> 
+                            <h1 className="font-mono text-xl tracking-tighter -mt-5">
+                                    Easy Collaboration
+                                    </h1> 
+                            <p className="text-base-content/70">
+                                Share your screen,discuss approaches, and solve problems together seamlessly.
+                               </p>        
+                      </div>
+                 </div>
+              </div>
+
+                
+               
+          </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;
